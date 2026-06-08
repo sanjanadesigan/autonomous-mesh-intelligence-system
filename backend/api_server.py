@@ -1,3 +1,5 @@
+import time
+import threading
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import json
@@ -30,7 +32,30 @@ def on_message(client, userdata, message):
 
     node_id = payload["node_id"]
 
+    payload["last_seen"] = time.time()
+    
     nodes[node_id] = payload
+
+def monitor_nodes():
+
+    while True:
+
+        current_time = time.time()
+
+        for node_id in list(nodes.keys()):
+
+            last_seen = nodes[node_id].get(
+                "last_seen",
+                current_time
+            )
+
+            if current_time - last_seen > 8:
+
+                nodes[node_id][
+                    "status"
+                ] = "offline"
+
+        time.sleep(2)
 
 
 def mqtt_loop():
@@ -56,6 +81,12 @@ mqtt_thread = threading.Thread(
 )
 
 mqtt_thread.start()
+monitor_thread = threading.Thread(
+    target=monitor_nodes,
+    daemon=True
+)
+
+monitor_thread.start()
 
 
 @app.get("/")
