@@ -5,14 +5,18 @@ import threading
 import paho.mqtt.client as mqtt
 
 app = FastAPI()
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=[
+        "https://autonomous-mesh-intelligence-system.vercel.app",
+        "https://autonomous-mesh-intelligence-system-bnhqxn43c.vercel.app",
+        "*"
+    ],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 nodes = {}
 
 TOPIC = "mesh/node/telemetry"
