@@ -14,7 +14,7 @@ function App() {
 
         const response =
           await axios.get(
-            "https://deflator-slingshot-effective.ngrok-free.dev/nodes"
+            "http://127.0.0.1:8000/nodes"
           );
 
         setNodes(response.data);
@@ -81,12 +81,6 @@ function App() {
             totalNodes) * 100
         )
       : 0;
-  const rerouteActive = 
-    Object.values(nodes).some(
-    node =>
-      node.status ===
-      "offline"
-  );
 
   return (
 

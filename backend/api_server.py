@@ -40,7 +40,7 @@ def mqtt_loop():
     client.on_message = on_message
 
     client.connect(
-        "127.0.0.1",
+        "broker.hivemq.com",
         1883,
         60
     )

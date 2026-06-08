@@ -7,7 +7,7 @@ NODE_ID = "NODE_02"
 
 client = mqtt.Client()
 
-client.connect("127.0.0.1", 1883, 60)
+client.connect("broker.hivemq.com", 1883, 60)
 
 print(f"{NODE_ID} started")
 
