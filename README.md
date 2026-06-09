@@ -1,7 +1,7 @@
 DASHBOARD LINK:
 [vercel dashboard](https://autonomous-mesh-intelligence-system.vercel.app/)
 
-# Autonomous Mesh Intelligence System
+# Autonomous Mesh Intelligence System 
 
 A fault-tolerant distributed mesh intelligence system
 for real-time node monitoring and resilient communication.
