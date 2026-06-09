@@ -28,9 +28,8 @@ during earthquakes, floods, and emergencies.
 - Cloud deployment
 - Live monitoring dashboard
 
-## Architecture
-
-[diagram image]
+# Architecture
+*diagram attached*
 
 ## Tech Stack
 
