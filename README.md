@@ -1,9 +1,10 @@
+DASHBOARD LINK:
+[vercel dashboard](https://autonomous-mesh-intelligence-system.vercel.app/)
+
 # Autonomous Mesh Intelligence System
 
 A fault-tolerant distributed mesh intelligence system
 for real-time node monitoring and resilient communication.
-
-## Problem Statement
 
 Traditional sequential communication systems fail
 when a single intermediate node goes offline.
@@ -50,6 +51,4 @@ Deployment:
 - Railway
 - Vercel
 
-your Railway link
 
-## Project Structure
